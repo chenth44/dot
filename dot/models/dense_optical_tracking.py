@@ -6,7 +6,7 @@ from einops import rearrange, repeat
 
 from .optical_flow import OpticalFlow
 from .point_tracking import PointTracker
-from dot.utils.torch import get_grid
+from ..utils.torch import get_grid
 
 
 class DenseOpticalTracker(nn.Module):

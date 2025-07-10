@@ -8,6 +8,7 @@ class CoTracker3(nn.Module):
         super().__init__()
         self.model = CoTrackerPredictor(
             window_len=args.wind_size,
+            checkpoint=args.tracker_path,
             offline=True,
             v2=False
         )

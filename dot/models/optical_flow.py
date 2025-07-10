@@ -5,8 +5,8 @@ from tqdm import tqdm
 
 from .shelf import RAFT
 from .interpolation import interpolate
-from dot.utils.io import read_config
-from dot.utils.torch import get_grid, get_sobel_kernel
+from ..utils.io import read_config
+from ..utils.torch import get_grid, get_sobel_kernel
 
 
 class OpticalFlow(nn.Module):

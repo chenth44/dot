@@ -4,14 +4,15 @@ from torch import nn
 
 from .optical_flow import OpticalFlow
 from .shelf import CoTracker, CoTracker2, CoTracker3, Tapir
-from dot.utils.io import read_config
-from dot.utils.torch import sample_points, sample_mask_points, get_grid
+from ..utils.io import read_config
+from ..utils.torch import sample_points, sample_mask_points, get_grid
 
 
 class PointTracker(nn.Module):
     def __init__(self,  height, width, tracker_config, tracker_path, estimator_config, estimator_path):
         super().__init__()
         model_args = read_config(tracker_config)
+        model_args.tracker_path = tracker_path
         model_dict = {
             "cotracker": CoTracker,
             "cotracker2": CoTracker2,
